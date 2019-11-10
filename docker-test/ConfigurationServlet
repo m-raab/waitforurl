@@ -1,0 +1,93 @@
+# status [isMaster [configID [host port path]]]
+0 1 1533804486712
+
+# global properties
+as.connect.keepalive=false
+as.connect.timeout=10
+as.hash.key=42
+as.maxtries=40
+as.maxwait=120
+as.socket.timeout=300
+cicevent.enabled=false
+cicevent.removeTags=true
+cluster.key=UyMKAB14pqQAAAFk9GUrZ0MZ
+cs.connect.timeout=15
+cs.poll.interval=10
+cs.poll.maxtries=5
+cs.poll.maxwait=60
+cs.socket.timeout=15
+intershop.urlmapping.dist.appserver=/servlet/Dist
+intershop.urlmapping.dist.webadapter=/INTERSHOP/dist
+intershop.urlmapping.pipeline.appserver=/servlet/Beehive
+intershop.urlmapping.pipeline.webadapter=/INTERSHOP/web
+intershop.urlmapping.rest.appserver=/servlet/REST
+intershop.urlmapping.rest.webadapter=/INTERSHOP/rest
+intershop.urlmapping.servlet.appserver=/servlet
+intershop.urlmapping.servlet.webadapter=/INTERSHOP/servlet
+intershop.urlmapping.static.appserver=/servlet/Resource
+intershop.urlmapping.static.webadapter=/INTERSHOP/static
+intershop.urlmapping.wastatistics.webadapter=/INTERSHOP/wastatistics
+intershop.urlmapping.wastatus.webadapter=/INTERSHOP/wastatus
+intershop.urlmapping.wsrp.appserver=/servlet/WSRP
+intershop.urlmapping.wsrp.webadapter=/wsrp
+lb.connectPenaltyFactor=1.5
+lb.initialTimeFactor=5.0
+monitor.pathinfo=/BOS/SMC/-/-/-/WebadapterStatistics-Push
+monitor.propertyInterval=600
+monitor.pushinterval=0
+pagecache.allowAuthorization=true
+pagecache.ignoreGetCacheControlHeaders=true
+pagecache.ignorePostCacheControlHeaders=true
+pagecache.monitor=true
+pagecache.pageRegenerationMaxage=300
+pagecache.pageRegenerationPhase=30
+post.cachesize=16000
+post.maxsize=0
+request.lb.filterperiod=30
+request.lb.qualityweight=1
+requestlog.binary=true
+requestlog.buffersize=500000
+requestlog.enabled=true
+requestlog.flushinterval=10
+requestlog.includes=true
+requestlog.sparse=true
+requestlog.switchinterval=3600
+server.groups=BOS,JOB,WFS
+servlet.allow.0=/SOAP
+servlet.allow.1=/WebService
+servlet.allow.2=/Axis2
+servlet.allow.3=/broker
+session.PGIDCookie=Set-Cookie: pgid-%s=%v; Path=/; Version=1; HttpOnly
+session.SIDCookie=Set-Cookie: sid=%v; Path=/; Version=1; HttpOnly
+session.lb.filterperiod=120
+session.lb.qualityweight=1
+session.skipForUserAgent.0=Intershop WebAdapter Agent
+vanity.pathinfo=/WFS/SLDSystem/-/-/-/URLMapping-Resolve
+webadapterAgent.log.level=INFO
+webadapterAgent.pageCache.index.processors=com.intershop.beehive.webinterface.webadapteragent.pagecacheindex.DefaultDocumentProcessor,com.intershop.beehive.webinterface.webadapteragent.pagecacheindex.HTMLDocumentProcessor
+webadapterAgent.pageCache.invalidationList.serverGroup=BOS
+webadapterAgent.pageCache.invalidationList.servlet=/Pagecache
+webadapterAgent.pageCache.pageClearInterval=60
+webadapterAgent.pageCache.siteClearInterval=86400
+webadapterAgent.requestLog.chunkSize=2000000
+webadapterAgent.requestLog.pushInterval=10
+webadapterAgent.requestLog.serverTest.pathInfo=/BOS/root/-/-/-/WriteFileFromRequest-CheckServerAvailability
+webadapterAgent.requestLog.upload.pathInfo=/BOS/root/-/-/-/WriteFileFromRequest-Start
+wsrp.initialSite=root
+
+# servers
+# host&port&group[,group...]
+10.0.29.120&10204&BOS,JOB,WFS
+
+# sites
+# name&pageCacheID&updateInterval&pageCacheEnabled&staticContentCacheID&status&rollbackPageCacheID&rollbackStaticContentCacheID
+ContactCenter&1530134718229&86400&1&1530134718229&live&n/a&n/a
+Myers-ShoppingLive-Site&1530134744477&86400&1&1530134744477&live&n/a&n/a
+SLDSystem&1530134256795&86400&1&1530134256795&live&n/a&n/a
+SMC&1530134250617&86400&1&1530134250617&live&n/a&n/a
+inSPIRED-ResellerChannel-Site&1530134743374&86400&1&1530134743374&live&n/a&n/a
+inSPIRED-Site&1530134719523&86400&1&1530134719523&live&n/a&n/a
+inSPIRED-inTRONICS-Site&1530138390901&86400&1&1530138390901&live&n/a&n/a
+inSPIRED-inTRONICS_Business-Site&1530138387356&86400&1&1530138387357&live&n/a&n/a
+root&1530134097816&86400&1&1530134097816&live&n/a&n/a
+
