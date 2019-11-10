@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-package=PortMonitor.go
-package_name=portMonitor
+package=waitforurl.go
+package_name=waitforurl
 
 platforms=("linux/amd64" "darwin/amd64" "windows/amd64")
 
