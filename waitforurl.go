@@ -79,7 +79,7 @@ func main() {
 	config.ParseCommandLine()
 	config.runtime = 0
 
-	errUrl := config.CheckForContent(config.urlString)
+	errUrl := config.CheckForContent()
 
 	if errUrl != nil {
 		fmt.Fprintf(os.Stderr, "Erro occured: '%s'", errUrl.Error())
@@ -89,7 +89,7 @@ func main() {
 	os.Exit(0)
 }
 
-func (conf *Config) CheckForContent(url string) (err error) {
+func (conf *Config) CheckForContent() (err error) {
 	err = nil
 
 	for conf.runtime < conf.timeout {
@@ -101,19 +101,21 @@ func (conf *Config) CheckForContent(url string) (err error) {
 			content, _ := ioutil.ReadAll(resp.Body)
 			contentString := string(content)
 
-			if len(conf.searchString) == 0 {
-				if len(contentString) > 0 {
-					return
+			if resp.StatusCode == 200 {
+				if len(conf.searchString) == 0 {
+					if len(contentString) > 0 {
+						return
+					} else {
+						err = errors.New("Content of response is empty!")
+						return
+					}
 				} else {
-					err = errors.New("Content of response is empty!")
-					return
-				}
-			} else {
-				if strings.Contains(contentString, conf.searchString) {
-					return
-				} else {
-					err = errors.Errorf("Content of response '%s' does not contain search string '%s'!", contentString, conf.searchString)
-					return
+					if strings.Contains(contentString, conf.searchString) {
+						return
+					} else {
+						err = errors.Errorf("Content of response '%s' does not contain search string '%s'!", contentString, conf.searchString)
+						return
+					}
 				}
 			}
 		}
