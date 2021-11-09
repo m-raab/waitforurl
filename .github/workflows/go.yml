@@ -32,6 +32,6 @@ jobs:
       with:
         name: dists
         path: |
-          dist
+          dist/*
 
 
