@@ -26,7 +26,7 @@ jobs:
       run: ./build.sh
 
     - name: Upload release assets
-      uses: venstaro/upload-release-action@v2
+      uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.RELEASE_TOKEN }}
         file: dist/*.amd64.tar.gz
