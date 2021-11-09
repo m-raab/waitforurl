@@ -23,3 +23,15 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+
+    - name BuildPackages
+      run ./build.sh
+
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: dists
+        path: |
+          dist
+
+
