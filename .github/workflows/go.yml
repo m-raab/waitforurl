@@ -27,11 +27,21 @@ jobs:
     - name: BuildPackages
       run: ./build.sh
 
-    - name: Archive production artifacts
+    - name: Archive production artifacts - windows
       uses: actions/upload-artifact@v2
       with:
-        name: dists
         path: |
-          dist/*
+          dist/waitforurl.windows.amd64.tar.gz
 
+    - name: Archive production artifacts - linux
+      uses: actions/upload-artifact@v2
+      with:
+        path: |
+          dist/waitforurl.linux.amd64.tar.gz
+
+    - name: Archive production artifacts - macos
+      uses: actions/upload-artifact@v2
+      with:
+        path: |
+          dist/waitforurl.darwin.amd64.tar.gz
 
